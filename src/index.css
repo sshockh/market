@@ -1,0 +1,148 @@
+html,
+body {
+    padding   : 0;
+    margin    : 0;
+    min-height: 100vh;
+    max-height: 100vh;
+}
+
+ul {
+    padding-left: 0;
+}
+
+li {
+    list-style-type: none;
+}
+
+#root {
+    padding    : 0;
+    margin     : auto;
+    min-height : 100vh;
+    max-height : 100vh;
+    max-width  : 1280px;
+    user-select: none;
+}
+
+.layout {
+    display       : flex;
+    flex-direction: column;
+    min-height    : 100vh;
+}
+
+.header {
+    display        : flex;
+    justify-content: space-between;
+    align-content  : center;
+    align-items    : center;
+}
+
+.header .cart-button {
+    width: 40px;
+}
+
+.header .login-button {
+    width: 60px;
+}
+
+.main {
+    border : 2px solid blue;
+    flex   : 1 1 auto;
+    display: flex;
+}
+
+.footer {
+    border    : 2px solid yellowgreen;
+    min-height: 100px;
+}
+
+.catalog {
+    display       : flex;
+    flex-direction: column;
+}
+
+.catalog-header {
+    display        : flex;
+    justify-content: space-between;
+}
+
+.catalog-header select {
+    height          : 30px;
+    outline         : 0;
+    border-radius   : 3px;
+    border          : 1px solid blue;
+    background-color: white;
+    margin          : 5px;
+}
+
+.catalog-main {
+    display: flex;
+
+}
+
+.catalog-main .filter {
+    flex: 0 0 240px;
+}
+
+.catalog-main .products {
+    flex: 1 1 auto;
+}
+
+.categories {
+    flex: 0 0 300px;
+}
+
+.categories li {
+    height       : 40px;
+    border-bottom: 1px solid blue;
+}
+
+.category {
+    text-decoration: none;
+    font-size      : 18px;
+    color          : black;
+}
+
+.content {
+    flex: 1 1 auto;
+}
+
+.login-form {
+    width           : 220px;
+    height          : 110px;
+    border          : 1px solid blue;
+    background-color: white;
+    border-radius   : 4px;
+    position        : absolute;
+    top             : 25%;
+    right           : 0;
+    left            : 0;
+    z-index         : 1;
+    margin          : auto;
+}
+
+.products {
+    display       : flex;
+    flex-direction: column;
+}
+
+.product-row {
+    border-top: 1px solid blue;
+    padding   : 10px;
+    height    : 140px;
+}
+
+.search input {
+    width        : 500px;
+    height       : 40px;
+    border       : 1px solid cornflowerblue;
+    font-size    : 16px;
+    border-radius: 8px;
+    outline      : 0;
+    padding      : 0 12px;
+}
+
+/* header */
+.user-menu-button {
+    width: 40px;
+    font-family: 'Courier New', Courier, monospace;
+}
