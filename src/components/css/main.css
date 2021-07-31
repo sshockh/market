@@ -6,6 +6,10 @@ body {
     max-height: 100vh;
 }
 
+* {
+    box-sizing: border-box;
+}
+
 ul {
     padding-left: 0;
 }
@@ -22,8 +26,13 @@ li {
     max-width  : 1280px;
     user-select: none;
     /*устранение слияния margin*/
-    overflow-y : hidden;
+    overflow   : hidden;
 
+}
+
+.app {
+    display       : flex;
+    flex-direction: column;
 }
 
 .layout {

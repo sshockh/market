@@ -1,7 +1,7 @@
 import React from 'react';
 import TableRow from './TableRow';
 
-function TableBody(params) {
+function TableBody(props) {
     
     return (
         <div className="table-body">

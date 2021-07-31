@@ -137,7 +137,7 @@ class App extends React.Component {
 
   render() {
     return (
-      <div onClick={this.onClick}>
+      <div onClick={this.onClick} className='app'>
         <Switch>
           <Route path="/login" render={
             () => (<Authentification setAuth={this.setAuth} />)
