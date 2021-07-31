@@ -16,11 +16,14 @@ li {
 
 #root {
     padding    : 0;
-    margin     : auto;
+    margin     : 0 auto;
     min-height : 100vh;
     max-height : 100vh;
     max-width  : 1280px;
     user-select: none;
+    /*устранение слияния margin*/
+    overflow-y : hidden;
+
 }
 
 .layout {
@@ -143,6 +146,6 @@ li {
 
 /* header */
 .user-menu-button {
-    width: 40px;
+    width      : 40px;
     font-family: 'Courier New', Courier, monospace;
 }

@@ -2,6 +2,7 @@ import React from 'react';
 import Site from './Site';
 import Authentification from './Authentification';
 import { Route, Switch } from 'react-router-dom';
+import AdminDashboard from './AdminDashboard';
 
 class App extends React.Component {
   constructor(props) {
@@ -141,6 +142,7 @@ class App extends React.Component {
           <Route path="/login" render={
             () => (<Authentification setAuth={this.setAuth} />)
           } />
+          <Route path="/admin" render={() => <AdminDashboard />} />
           <Route path="/" render={() => {
             return (<Site
               isAuth={this.state.isAuth}
