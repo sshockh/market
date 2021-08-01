@@ -2,7 +2,8 @@ import React from 'react';
 import Site from './Site';
 import Authentification from './Authentification';
 import { Route, Switch } from 'react-router-dom';
-import AdminDashboard from './AdminDashboard';
+import AdminDashboard from './admin/AdminDashboard';
+import ContextMenu from './ContextMenu';
 
 class App extends React.Component {
   constructor(props) {
@@ -137,7 +138,8 @@ class App extends React.Component {
 
   render() {
     return (
-      <div onClick={this.onClick} className='app'>
+      <div className='app'>
+        {true ? <ContextMenu /> : null}
         <Switch>
           <Route path="/login" render={
             () => (<Authentification setAuth={this.setAuth} />)
@@ -157,6 +159,7 @@ class App extends React.Component {
           }
           }
           />
+
         </Switch>
       </div>
     );

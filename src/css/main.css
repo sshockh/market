@@ -27,10 +27,11 @@ li {
     user-select: none;
     /*устранение слияния margin*/
     overflow   : hidden;
-
 }
 
 .app {
+    flex: 1 1;
+
     display       : flex;
     flex-direction: column;
 }

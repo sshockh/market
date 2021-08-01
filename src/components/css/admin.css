@@ -1,9 +1,0 @@
-.admin-layout {
-    min-height    : 100%;
-    max-height    : 100vh;
-    display       : flex;
-    flex-direction: column;
-
-    border: 2px solid blue;
-
-}

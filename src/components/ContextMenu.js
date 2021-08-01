@@ -1,4 +1,4 @@
-import './css/context_menu.css';
+import '../css/context_menu.css';
 
 function ContextMenu(props) {
 
