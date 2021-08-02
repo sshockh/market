@@ -13,7 +13,8 @@ class StickyTable extends React.Component {
             propName: PropTypes.string,
             sortable: PropTypes.bool,
             searchable: PropTypes.bool
-        }))
+        })),
+        data: PropTypes.array
     }
 
     static defaultProps = {
@@ -58,6 +59,461 @@ class StickyTable extends React.Component {
                 searchable: true
             }
         ],
+        data0: [
+            {
+                id: 1,
+                name: 'Лодка ПВХ',
+                desc: 'Великолепный вариант для семейного отдыха и рыбалки. Выбор истинного лоха рыбака',
+                price: 4000.0,
+                img: '/lodka_pvh.jpg',
+                availableCount: 99,
+                category: 105
+            },
+            {
+                id: 2,
+                name: 'Лодка ПВХ Ривьера 3400 СК (КОМПАКТ) надувная под мотор',
+                desc: 'Лодка Ривьера 3400 СК версии компакт/лайт/light - это прекрасный пример качественной лодки по адекватной цене с отличными техническими характеристиками',
+                price: 39170.0,
+                img: 'river-3400-1.jpg',
+                availableCount: 7,
+                category: 105
+            },
+            {
+                id: 3,
+                name: 'Лодка ПВХ DRAGON 330 Classic PRO 9мм сборная слань на стрингерах',
+                desc: 'Лодка ПВХ Dragon 330 Classic PRO - надежная моторная лодка из армированной ткани плотностью 1100 г/м2 с классическими баллонами. В базовой комплекатации идут мягкие накладки на сиденья',
+                price: 31990.0,
+                img: '/dragon-330-classic-base-1.jpg',
+                availableCount: 5,
+                category: 105
+            },
+            {
+                id: 4,
+                name: 'Лодка ПВХ Аква 2800 надувная под мотор',
+                desc: 'Надувная лодка АКВА 2800 имеет положительные отзывы владельцев благодаря хорошим соотношениям цены и характеристик. Кокпит: 208x62 см. По периметру установлен привальный брус с волноотбойником',
+                price: 16520.0,
+                img: '/1698_2.jpg',
+                availableCount: 2,
+                category: 105
+            },
+            {
+                id: 5,
+                name: 'Фирменная футболка ZoMarket',
+                desc: 'Zoooooooo',
+                price: 2999.99,
+                img: '/zo.jpg',
+                availableCount: 999,
+                category: 101
+            }
+        ],
+        data: [
+            {
+                id: 1,
+                name: 'Лодка ПВХ',
+                desc: 'Великолепный вариант для семейного отдыха и рыбалки. Выбор истинного лоха рыбака',
+                price: 4000.0,
+                img: '/lodka_pvh.jpg',
+                availableCount: 99,
+                category: 105
+            },
+            {
+                id: 2,
+                name: 'Лодка ПВХ Ривьера 3400 СК (КОМПАКТ) надувная под мотор',
+                desc: 'Лодка Ривьера 3400 СК версии компакт/лайт/light - это прекрасный пример качественной лодки по адекватной цене с отличными техническими характеристиками',
+                price: 39170.0,
+                img: 'river-3400-1.jpg',
+                availableCount: 7,
+                category: 105
+            },
+            {
+                id: 3,
+                name: 'Лодка ПВХ DRAGON 330 Classic PRO 9мм сборная слань на стрингерах',
+                desc: 'Лодка ПВХ Dragon 330 Classic PRO - надежная моторная лодка из армированной ткани плотностью 1100 г/м2 с классическими баллонами. В базовой комплекатации идут мягкие накладки на сиденья',
+                price: 31990.0,
+                img: '/dragon-330-classic-base-1.jpg',
+                availableCount: 5,
+                category: 105
+            },
+            {
+                id: 4,
+                name: 'Лодка ПВХ Аква 2800 надувная под мотор',
+                desc: 'Надувная лодка АКВА 2800 имеет положительные отзывы владельцев благодаря хорошим соотношениям цены и характеристик. Кокпит: 208x62 см. По периметру установлен привальный брус с волноотбойником',
+                price: 16520.0,
+                img: '/1698_2.jpg',
+                availableCount: 2,
+                category: 105
+            },
+            {
+                id: 5,
+                name: 'Фирменная футболка ZoMarket',
+                desc: 'Zoooooooo',
+                price: 2999.99,
+                img: '/zo.jpg',
+                availableCount: 999,
+                category: 101
+            },
+            {
+                id: 6,
+                name: 'Лодка ПВХ Ривьера 3400 СК (КОМПАКТ) надувная под мотор',
+                desc: 'Лодка Ривьера 3400 СК версии компакт/лайт/light - это прекрасный пример качественной лодки по адекватной цене с отличными техническими характеристиками',
+                price: 39170.0,
+                img: 'river-3400-1.jpg',
+                availableCount: 7,
+                category: 105
+            },
+            {
+                id: 7,
+                name: 'Лодка ПВХ Ривьера 3400 СК (КОМПАКТ) надувная под мотор',
+                desc: 'Лодка Ривьера 3400 СК версии компакт/лайт/light - это прекрасный пример качественной лодки по адекватной цене с отличными техническими характеристиками',
+                price: 39170.0,
+                img: 'river-3400-1.jpg',
+                availableCount: 7,
+                category: 105
+            }, {
+                id: 8,
+                name: 'Лодка ПВХ Ривьера 3400 СК (КОМПАКТ) надувная под мотор',
+                desc: 'Лодка Ривьера 3400 СК версии компакт/лайт/light - это прекрасный пример качественной лодки по адекватной цене с отличными техническими характеристиками',
+                price: 39170.0,
+                img: 'river-3400-1.jpg',
+                availableCount: 7,
+                category: 105
+            }, {
+                id: 9,
+                name: 'Лодка ПВХ Ривьера 3400 СК (КОМПАКТ) надувная под мотор',
+                desc: 'Лодка Ривьера 3400 СК версии компакт/лайт/light - это прекрасный пример качественной лодки по адекватной цене с отличными техническими характеристиками',
+                price: 39170.0,
+                img: 'river-3400-1.jpg',
+                availableCount: 7,
+                category: 105
+            },
+            {
+                id: 51,
+                name: 'Лодка ПВХ DRAGON 330 Classic PRO 9мм сборная слань на стрингерах',
+                desc: 'Лодка ПВХ Dragon 330 Classic PRO - надежная моторная лодка из армированной ткани плотностью 1100 г/м2 с классическими баллонами. В базовой комплекатации идут мягкие накладки на сиденья',
+                price: 31990.0,
+                img: '/dragon-330-classic-base-1.jpg',
+                availableCount: 5,
+                category: 105
+            },
+            {
+                id: 10,
+                name: 'Лодка ПВХ Ривьера 3400 СК (КОМПАКТ) надувная под мотор',
+                desc: 'Лодка Ривьера 3400 СК версии компакт/лайт/light - это прекрасный пример качественной лодки по адекватной цене с отличными техническими характеристиками',
+                price: 39170.0,
+                img: 'river-3400-1.jpg',
+                availableCount: 7,
+                category: 105
+            }, {
+                id: 11,
+                name: 'Лодка ПВХ Ривьера 3400 СК (КОМПАКТ) надувная под мотор',
+                desc: 'Лодка Ривьера 3400 СК версии компакт/лайт/light - это прекрасный пример качественной лодки по адекватной цене с отличными техническими характеристиками',
+                price: 39170.0,
+                img: 'river-3400-1.jpg',
+                availableCount: 7,
+                category: 105
+            }, {
+                id: 12,
+                name: 'Лодка ПВХ Ривьера 3400 СК (КОМПАКТ) надувная под мотор',
+                desc: 'Лодка Ривьера 3400 СК версии компакт/лайт/light - это прекрасный пример качественной лодки по адекватной цене с отличными техническими характеристиками',
+                price: 39170.0,
+                img: 'river-3400-1.jpg',
+                availableCount: 7,
+                category: 105
+            }, {
+                id: 13,
+                name: 'Лодка ПВХ Ривьера 3400 СК (КОМПАКТ) надувная под мотор',
+                desc: 'Лодка Ривьера 3400 СК версии компакт/лайт/light - это прекрасный пример качественной лодки по адекватной цене с отличными техническими характеристиками',
+                price: 39170.0,
+                img: 'river-3400-1.jpg',
+                availableCount: 7,
+                category: 105
+            },
+            {
+                id: 52,
+                name: 'Лодка ПВХ DRAGON 330 Classic PRO 9мм сборная слань на стрингерах',
+                desc: 'Лодка ПВХ Dragon 330 Classic PRO - надежная моторная лодка из армированной ткани плотностью 1100 г/м2 с классическими баллонами. В базовой комплекатации идут мягкие накладки на сиденья',
+                price: 31990.0,
+                img: '/dragon-330-classic-base-1.jpg',
+                availableCount: 5,
+                category: 105
+            },
+            {
+                id: 14,
+                name: 'Лодка ПВХ Ривьера 3400 СК (КОМПАКТ) надувная под мотор',
+                desc: 'Лодка Ривьера 3400 СК версии компакт/лайт/light - это прекрасный пример качественной лодки по адекватной цене с отличными техническими характеристиками',
+                price: 39170.0,
+                img: 'river-3400-1.jpg',
+                availableCount: 7,
+                category: 105
+            }, {
+                id: 15,
+                name: 'Лодка ПВХ Ривьера 3400 СК (КОМПАКТ) надувная под мотор',
+                desc: 'Лодка Ривьера 3400 СК версии компакт/лайт/light - это прекрасный пример качественной лодки по адекватной цене с отличными техническими характеристиками',
+                price: 39170.0,
+                img: 'river-3400-1.jpg',
+                availableCount: 7,
+                category: 105
+            }, {
+                id: 16,
+                name: 'Лодка ПВХ Ривьера 3400 СК (КОМПАКТ) надувная под мотор',
+                desc: 'Лодка Ривьера 3400 СК версии компакт/лайт/light - это прекрасный пример качественной лодки по адекватной цене с отличными техническими характеристиками',
+                price: 39170.0,
+                img: 'river-3400-1.jpg',
+                availableCount: 7,
+                category: 105
+            },
+            {
+                id: 53,
+                name: 'Лодка ПВХ DRAGON 330 Classic PRO 9мм сборная слань на стрингерах',
+                desc: 'Лодка ПВХ Dragon 330 Classic PRO - надежная моторная лодка из армированной ткани плотностью 1100 г/м2 с классическими баллонами. В базовой комплекатации идут мягкие накладки на сиденья',
+                price: 31990.0,
+                img: '/dragon-330-classic-base-1.jpg',
+                availableCount: 5,
+                category: 105
+            }, {
+                id: 17,
+                name: 'Лодка ПВХ Ривьера 3400 СК (КОМПАКТ) надувная под мотор',
+                desc: 'Лодка Ривьера 3400 СК версии компакт/лайт/light - это прекрасный пример качественной лодки по адекватной цене с отличными техническими характеристиками',
+                price: 39170.0,
+                img: 'river-3400-1.jpg',
+                availableCount: 7,
+                category: 105
+            }, {
+                id: 18,
+                name: 'Лодка ПВХ Ривьера 3400 СК (КОМПАКТ) надувная под мотор',
+                desc: 'Лодка Ривьера 3400 СК версии компакт/лайт/light - это прекрасный пример качественной лодки по адекватной цене с отличными техническими характеристиками',
+                price: 39170.0,
+                img: 'river-3400-1.jpg',
+                availableCount: 7,
+                category: 105
+            }, {
+                id: 19,
+                name: 'Лодка ПВХ Ривьера 3400 СК (КОМПАКТ) надувная под мотор',
+                desc: 'Лодка Ривьера 3400 СК версии компакт/лайт/light - это прекрасный пример качественной лодки по адекватной цене с отличными техническими характеристиками',
+                price: 39170.0,
+                img: 'river-3400-1.jpg',
+                availableCount: 7,
+                category: 105
+            },
+            {
+                id: 54,
+                name: 'Лодка ПВХ DRAGON 330 Classic PRO 9мм сборная слань на стрингерах',
+                desc: 'Лодка ПВХ Dragon 330 Classic PRO - надежная моторная лодка из армированной ткани плотностью 1100 г/м2 с классическими баллонами. В базовой комплекатации идут мягкие накладки на сиденья',
+                price: 31990.0,
+                img: '/dragon-330-classic-base-1.jpg',
+                availableCount: 5,
+                category: 105
+            },
+            {
+                id: 55,
+                name: 'Лодка ПВХ DRAGON 330 Classic PRO 9мм сборная слань на стрингерах',
+                desc: 'Лодка ПВХ Dragon 330 Classic PRO - надежная моторная лодка из армированной ткани плотностью 1100 г/м2 с классическими баллонами. В базовой комплекатации идут мягкие накладки на сиденья',
+                price: 31990.0,
+                img: '/dragon-330-classic-base-1.jpg',
+                availableCount: 5,
+                category: 105
+            },
+            {
+                id: 56,
+                name: 'Лодка ПВХ DRAGON 330 Classic PRO 9мм сборная слань на стрингерах',
+                desc: 'Лодка ПВХ Dragon 330 Classic PRO - надежная моторная лодка из армированной ткани плотностью 1100 г/м2 с классическими баллонами. В базовой комплекатации идут мягкие накладки на сиденья',
+                price: 31990.0,
+                img: '/dragon-330-classic-base-1.jpg',
+                availableCount: 5,
+                category: 105
+            },
+            {
+                id: 57,
+                name: 'Лодка ПВХ DRAGON 330 Classic PRO 9мм сборная слань на стрингерах',
+                desc: 'Лодка ПВХ Dragon 330 Classic PRO - надежная моторная лодка из армированной ткани плотностью 1100 г/м2 с классическими баллонами. В базовой комплекатации идут мягкие накладки на сиденья',
+                price: 31990.0,
+                img: '/dragon-330-classic-base-1.jpg',
+                availableCount: 5,
+                category: 105
+            },
+            {
+                id: 58,
+                name: 'Лодка ПВХ DRAGON 330 Classic PRO 9мм сборная слань на стрингерах',
+                desc: 'Лодка ПВХ Dragon 330 Classic PRO - надежная моторная лодка из армированной ткани плотностью 1100 г/м2 с классическими баллонами. В базовой комплекатации идут мягкие накладки на сиденья',
+                price: 31990.0,
+                img: '/dragon-330-classic-base-1.jpg',
+                availableCount: 5,
+                category: 105
+            },
+            {
+                id: 59,
+                name: 'Лодка ПВХ DRAGON 330 Classic PRO 9мм сборная слань на стрингерах',
+                desc: 'Лодка ПВХ Dragon 330 Classic PRO - надежная моторная лодка из армированной ткани плотностью 1100 г/м2 с классическими баллонами. В базовой комплекатации идут мягкие накладки на сиденья',
+                price: 31990.0,
+                img: '/dragon-330-classic-base-1.jpg',
+                availableCount: 5,
+                category: 105
+            },
+            {
+                id: 60,
+                name: 'Лодка ПВХ DRAGON 330 Classic PRO 9мм сборная слань на стрингерах',
+                desc: 'Лодка ПВХ Dragon 330 Classic PRO - надежная моторная лодка из армированной ткани плотностью 1100 г/м2 с классическими баллонами. В базовой комплекатации идут мягкие накладки на сиденья',
+                price: 31990.0,
+                img: '/dragon-330-classic-base-1.jpg',
+                availableCount: 5,
+                category: 105
+            },
+            {
+                id: 61,
+                name: 'Лодка ПВХ DRAGON 330 Classic PRO 9мм сборная слань на стрингерах',
+                desc: 'Лодка ПВХ Dragon 330 Classic PRO - надежная моторная лодка из армированной ткани плотностью 1100 г/м2 с классическими баллонами. В базовой комплекатации идут мягкие накладки на сиденья',
+                price: 31990.0,
+                img: '/dragon-330-classic-base-1.jpg',
+                availableCount: 5,
+                category: 105
+            },
+            {
+                id: 62,
+                name: 'Лодка ПВХ DRAGON 330 Classic PRO 9мм сборная слань на стрингерах',
+                desc: 'Лодка ПВХ Dragon 330 Classic PRO - надежная моторная лодка из армированной ткани плотностью 1100 г/м2 с классическими баллонами. В базовой комплекатации идут мягкие накладки на сиденья',
+                price: 31990.0,
+                img: '/dragon-330-classic-base-1.jpg',
+                availableCount: 5,
+                category: 105
+            },
+            {
+                id: 63,
+                name: 'Лодка ПВХ DRAGON 330 Classic PRO 9мм сборная слань на стрингерах',
+                desc: 'Лодка ПВХ Dragon 330 Classic PRO - надежная моторная лодка из армированной ткани плотностью 1100 г/м2 с классическими баллонами. В базовой комплекатации идут мягкие накладки на сиденья',
+                price: 31990.0,
+                img: '/dragon-330-classic-base-1.jpg',
+                availableCount: 5,
+                category: 105
+            }, {
+                id: 20,
+                name: 'Лодка ПВХ Ривьера 3400 СК (КОМПАКТ) надувная под мотор',
+                desc: 'Лодка Ривьера 3400 СК версии компакт/лайт/light - это прекрасный пример качественной лодки по адекватной цене с отличными техническими характеристиками',
+                price: 39170.0,
+                img: 'river-3400-1.jpg',
+                availableCount: 7,
+                category: 105
+            }, {
+                id: 21,
+                name: 'Лодка ПВХ Ривьера 3400 СК (КОМПАКТ) надувная под мотор',
+                desc: 'Лодка Ривьера 3400 СК версии компакт/лайт/light - это прекрасный пример качественной лодки по адекватной цене с отличными техническими характеристиками',
+                price: 39170.0,
+                img: 'river-3400-1.jpg',
+                availableCount: 7,
+                category: 105
+            }, {
+                id: 22,
+                name: 'Лодка ПВХ Ривьера 3400 СК (КОМПАКТ) надувная под мотор',
+                desc: 'Лодка Ривьера 3400 СК версии компакт/лайт/light - это прекрасный пример качественной лодки по адекватной цене с отличными техническими характеристиками',
+                price: 39170.0,
+                img: 'river-3400-1.jpg',
+                availableCount: 7,
+                category: 105
+            }, {
+                id: 23,
+                name: 'Лодка ПВХ Ривьера 3400 СК (КОМПАКТ) надувная под мотор',
+                desc: 'Лодка Ривьера 3400 СК версии компакт/лайт/light - это прекрасный пример качественной лодки по адекватной цене с отличными техническими характеристиками',
+                price: 39170.0,
+                img: 'river-3400-1.jpg',
+                availableCount: 7,
+                category: 105
+            }, {
+                id: 24,
+                name: 'Лодка ПВХ Ривьера 3400 СК (КОМПАКТ) надувная под мотор',
+                desc: 'Лодка Ривьера 3400 СК версии компакт/лайт/light - это прекрасный пример качественной лодки по адекватной цене с отличными техническими характеристиками',
+                price: 39170.0,
+                img: 'river-3400-1.jpg',
+                availableCount: 7,
+                category: 105
+            }, {
+                id: 25,
+                name: 'Лодка ПВХ Ривьера 3400 СК (КОМПАКТ) надувная под мотор',
+                desc: 'Лодка Ривьера 3400 СК версии компакт/лайт/light - это прекрасный пример качественной лодки по адекватной цене с отличными техническими характеристиками',
+                price: 39170.0,
+                img: 'river-3400-1.jpg',
+                availableCount: 7,
+                category: 105
+            }, {
+                id: 26,
+                name: 'Лодка ПВХ Ривьера 3400 СК (КОМПАКТ) надувная под мотор',
+                desc: 'Лодка Ривьера 3400 СК версии компакт/лайт/light - это прекрасный пример качественной лодки по адекватной цене с отличными техническими характеристиками',
+                price: 39170.0,
+                img: 'river-3400-1.jpg',
+                availableCount: 7,
+                category: 105
+            }, {
+                id: 27,
+                name: 'Лодка ПВХ Ривьера 3400 СК (КОМПАКТ) надувная под мотор',
+                desc: 'Лодка Ривьера 3400 СК версии компакт/лайт/light - это прекрасный пример качественной лодки по адекватной цене с отличными техническими характеристиками',
+                price: 39170.0,
+                img: 'river-3400-1.jpg',
+                availableCount: 7,
+                category: 105
+            }, {
+                id: 28,
+                name: 'Лодка ПВХ Ривьера 3400 СК (КОМПАКТ) надувная под мотор',
+                desc: 'Лодка Ривьера 3400 СК версии компакт/лайт/light - это прекрасный пример качественной лодки по адекватной цене с отличными техническими характеристиками',
+                price: 39170.0,
+                img: 'river-3400-1.jpg',
+                availableCount: 7,
+                category: 105
+            }, {
+                id: 29,
+                name: 'Лодка ПВХ Ривьера 3400 СК (КОМПАКТ) надувная под мотор',
+                desc: 'Лодка Ривьера 3400 СК версии компакт/лайт/light - это прекрасный пример качественной лодки по адекватной цене с отличными техническими характеристиками',
+                price: 39170.0,
+                img: 'river-3400-1.jpg',
+                availableCount: 7,
+                category: 105
+            }, {
+                id: 30,
+                name: 'Лодка ПВХ Ривьера 3400 СК (КОМПАКТ) надувная под мотор',
+                desc: 'Лодка Ривьера 3400 СК версии компакт/лайт/light - это прекрасный пример качественной лодки по адекватной цене с отличными техническими характеристиками',
+                price: 39170.0,
+                img: 'river-3400-1.jpg',
+                availableCount: 7,
+                category: 105
+            }, {
+                id: 31,
+                name: 'Лодка ПВХ Ривьера 3400 СК (КОМПАКТ) надувная под мотор',
+                desc: 'Лодка Ривьера 3400 СК версии компакт/лайт/light - это прекрасный пример качественной лодки по адекватной цене с отличными техническими характеристиками',
+                price: 39170.0,
+                img: 'river-3400-1.jpg',
+                availableCount: 7,
+                category: 105
+            }, {
+                id: 32,
+                name: 'Лодка ПВХ Ривьера 3400 СК (КОМПАКТ) надувная под мотор',
+                desc: 'Лодка Ривьера 3400 СК версии компакт/лайт/light - это прекрасный пример качественной лодки по адекватной цене с отличными техническими характеристиками',
+                price: 39170.0,
+                img: 'river-3400-1.jpg',
+                availableCount: 7,
+                category: 105
+            }, {
+                id: 33,
+                name: 'Лодка ПВХ Ривьера 3400 СК (КОМПАКТ) надувная под мотор',
+                desc: 'Лодка Ривьера 3400 СК версии компакт/лайт/light - это прекрасный пример качественной лодки по адекватной цене с отличными техническими характеристиками',
+                price: 39170.0,
+                img: 'river-3400-1.jpg',
+                availableCount: 7,
+                category: 105
+            }, {
+                id: 34,
+                name: 'Лодка ПВХ Ривьера 3400 СК (КОМПАКТ) надувная под мотор',
+                desc: 'Лодка Ривьера 3400 СК версии компакт/лайт/light - это прекрасный пример качественной лодки по адекватной цене с отличными техническими характеристиками',
+                price: 39170.0,
+                img: 'river-3400-1.jpg',
+                availableCount: 7,
+                category: 105
+            }, {
+                id: 35,
+                name: 'Лодка ПВХ Ривьера 3400 СК (КОМПАКТ) надувная под мотор',
+                desc: 'Last record',
+                price: 39170.0,
+                img: 'river-3400-1.jpg',
+                availableCount: 7,
+                category: 105
+            },
+        ]
     }
 
     handleXScroll = (evt) => {
@@ -69,178 +525,56 @@ class StickyTable extends React.Component {
     }
 
     render() {
+
+        const styles = {}
+        this.props.columns.forEach(col => {
+            styles[col.key] = {
+                minWidth: col.width,
+                maxWidth: col.width
+            }
+        });
+
         return (
             <div className='sticky-table-container'>
                 <div className='sticky-table-header scroll-copy'>
-                    <div className="item item-sticky">item 1</div>
-                    <div className="item">item 2</div>
-                    <div className="item">item 3</div>
-                    <div className="item">item 4</div>
-                    <div className="item">item 5</div>
-                    <div className="item">item 6</div>
-                    <div className="item">item 7</div>
-                    <div className="item">item 8</div>
-                    <div className="item">item 9</div>
-                    <div className="item">item 10</div>
+                    {
+                        this.props.columns.map(col => {
+                            return (<div
+                                className="sticky-table-header-cell"
+                                style={styles[col.key]}
+                                key={col.id}
+                            >{col.title}</div>)
+                        })
+                    }
                 </div>
-                <div className='sticky-table-row scroll-copy'>
-                    <div className="item item-sticky">item 1</div>
-                    <div className="item">item 2</div>
-                    <div className="item">item 3</div>
-                    <div className="item">item 4</div>
-                    <div className="item">item 5</div>
-                    <div className="item">item 6</div>
-                    <div className="item">item 7</div>
-                    <div className="item">item 8</div>
-                    <div className="item">item 9</div>
-                    <div className="item">item 10</div>
-                </div>
-                <div className='sticky-table-row scroll-copy'>
-                    <div className="item item-sticky">item 1</div>
-                    <div className="item">item 2</div>
-                    <div className="item">item 3</div>
-                    <div className="item">item 4</div>
-                    <div className="item">item 5</div>
-                    <div className="item">item 6</div>
-                    <div className="item">item 7</div>
-                    <div className="item">item 8</div>
-                    <div className="item">item 9</div>
-                    <div className="item">item 10</div>
-                </div>
-                <div className='sticky-table-row scroll-copy'>
-                    <div className="item item-sticky">item 1</div>
-                    <div className="item">item 2</div>
-                    <div className="item">item 3</div>
-                    <div className="item">item 4</div>
-                    <div className="item">item 5</div>
-                    <div className="item">item 6</div>
-                    <div className="item">item 7</div>
-                    <div className="item">item 8</div>
-                    <div className="item">item 9</div>
-                    <div className="item">item 10</div>
-                </div>
-                <div className='sticky-table-row scroll-copy'>
-                    <div className="item item-sticky">item 1</div>
-                    <div className="item">item 2</div>
-                    <div className="item">item 3</div>
-                    <div className="item">item 4</div>
-                    <div className="item">item 5</div>
-                    <div className="item">item 6</div>
-                    <div className="item">item 7</div>
-                    <div className="item">item 8</div>
-                    <div className="item">item 9</div>
-                    <div className="item">item 10</div>
-                </div>
-                <div className='sticky-table-row scroll-copy'>
-                    <div className="item item-sticky">item 1</div>
-                    <div className="item">item 2</div>
-                    <div className="item">item 3</div>
-                    <div className="item">item 4</div>
-                    <div className="item">item 5</div>
-                    <div className="item">item 6</div>
-                    <div className="item">item 7</div>
-                    <div className="item">item 8</div>
-                    <div className="item">item 9</div>
-                    <div className="item">item 10</div>
-                </div>
-                <div className='sticky-table-row scroll-copy'>
-                    <div className="item item-sticky">item 1</div>
-                    <div className="item">item 2</div>
-                    <div className="item">item 3</div>
-                    <div className="item">item 4</div>
-                    <div className="item">item 5</div>
-                    <div className="item">item 6</div>
-                    <div className="item">item 7</div>
-                    <div className="item">item 8</div>
-                    <div className="item">item 9</div>
-                    <div className="item">item 10</div>
-                </div>
-                <div className='sticky-table-row scroll-copy'>
-                    <div className="item item-sticky">item 1</div>
-                    <div className="item">item 2</div>
-                    <div className="item">item 3</div>
-                    <div className="item">item 4</div>
-                    <div className="item">item 5</div>
-                    <div className="item">item 6</div>
-                    <div className="item">item 7</div>
-                    <div className="item">item 8</div>
-                    <div className="item">item 9</div>
-                    <div className="item">item 10</div>
-                </div>
-                <div className='sticky-table-row scroll-copy'>
-                    <div className="item item-sticky">item 1</div>
-                    <div className="item">item 2</div>
-                    <div className="item">item 3</div>
-                    <div className="item">item 4</div>
-                    <div className="item">item 5</div>
-                    <div className="item">item 6</div>
-                    <div className="item">item 7</div>
-                    <div className="item">item 8</div>
-                    <div className="item">item 9</div>
-                    <div className="item">item 10</div>
-                </div>
-                <div className='sticky-table-row scroll-copy'>
-                    <div className="item item-sticky">item 1</div>
-                    <div className="item">item 2</div>
-                    <div className="item">item 3</div>
-                    <div className="item">item 4</div>
-                    <div className="item">item 5</div>
-                    <div className="item">item 6</div>
-                    <div className="item">item 7</div>
-                    <div className="item">item 8</div>
-                    <div className="item">item 9</div>
-                    <div className="item">item 10</div>
-                </div>
-                <div className='sticky-table-row scroll-copy'>
-                    <div className="item item-sticky">item 1</div>
-                    <div className="item">item 2</div>
-                    <div className="item">item 3</div>
-                    <div className="item">item 4</div>
-                    <div className="item">item 5</div>
-                    <div className="item">item 6</div>
-                    <div className="item">item 7</div>
-                    <div className="item">item 8</div>
-                    <div className="item">item 9</div>
-                    <div className="item">item 10</div>
-                </div>
-                <div className='sticky-table-row scroll-copy'>
-                    <div className="item item-sticky">item 1</div>
-                    <div className="item">item 2</div>
-                    <div className="item">item 3</div>
-                    <div className="item">item 4</div>
-                    <div className="item">item 5</div>
-                    <div className="item">item 6</div>
-                    <div className="item">item 7</div>
-                    <div className="item">item 8</div>
-                    <div className="item">item 9</div>
-                    <div className="item">item 10</div>
-                </div>
-                <div className='sticky-table-row scroll-copy'>
-                    <div className="item item-sticky">item 1</div>
-                    <div className="item">item 2</div>
-                    <div className="item">item 3</div>
-                    <div className="item">item 4</div>
-                    <div className="item">item 5</div>
-                    <div className="item">item 6</div>
-                    <div className="item">item 7</div>
-                    <div className="item">item 8</div>
-                    <div className="item">item 9</div>
-                    <div className="item">item 10</div>
-                </div>
+                {
+                    this.props.data.map(row => {
+                        return (<div
+                            className='sticky-table-row scroll-copy'
+                            key={row.id}>
+                            {this.props.columns.map(col => {
+                                return (<div
+                                    className="item"
+                                    style={styles[col.key]}
+                                    key={row.id + '_' + col.key}>
+                                    {row[col.key]}
+                                </div>)
+                            })}
+                        </div>)
+                    })
+                }
+
                 <div
                     className='sticky-table-x-scroll'
-                    onScroll={this.handleXScroll}
-                >
-                    <div className="item item-sticky">item 1</div>
-                    <div className="item">item 2</div>
-                    <div className="item">item 3</div>
-                    <div className="item">item 4</div>
-                    <div className="item">item 5</div>
-                    <div className="item">item 6</div>
-                    <div className="item">item 7</div>
-                    <div className="item">item 8</div>
-                    <div className="item">item 9</div>
-                    <div className="item">item 10</div>
+                    onScroll={this.handleXScroll}>
+                    {
+                        this.props.columns.map(col => {
+                            return (<div
+                                style={styles[col.key]}
+                                key={'scroll' + col.id}
+                            ></div>)
+                        })
+                    }
                 </div>
             </div>
         );
