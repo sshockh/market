@@ -139,7 +139,7 @@ class App extends React.Component {
   render() {
     return (
       <div className='app'>
-        {true ? <ContextMenu /> : null}
+        {false ? <ContextMenu /> : null}
         <Switch>
           <Route path="/login" render={
             () => (<Authentification setAuth={this.setAuth} />)
