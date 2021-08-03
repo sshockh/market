@@ -7,12 +7,12 @@
 
     scroll-snap-type: y mandatory;
     scroll-padding  : 40px;
+
     /* 40px - высота хедера */
 }
 
 .sticky-table-header {
-    height          : 40px;
-    border-right    : 1px solid blue;
+    height          : 40px;    
     position        : sticky;
     background-color: white;
     top             : 0;
@@ -36,7 +36,6 @@
 }
 
 .sticky-table-row {
-    min-height   : 30px;
     border-bottom: 1px solid gray;
     display      : flex;
     overflow     : hidden;
@@ -49,7 +48,9 @@
     flex       : 1 0 150px;
     font       : 10pt sans-serif;
     padding    : 5px;
+    /* вынести в отдельный класс для настройки
     white-space: nowrap;
+*/
 }
 
 .item-sticky {
@@ -60,10 +61,16 @@
 }
 
 .sticky-table-x-scroll {
-    height    : 16px;
+    height    : 18px;
     display   : flex;
     overflow-x: scroll;
 
     position: sticky;
     bottom  : 0;
+
+    /*scroll-snap-type: x mandatory;*/
+}
+
+.scroll-item {
+    /*scroll-snap-align: start;*/
 }

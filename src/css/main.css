@@ -27,6 +27,7 @@ li {
     user-select: none;
     /*устранение слияния margin*/
     overflow   : hidden;
+    display: flex;
 }
 
 .app {

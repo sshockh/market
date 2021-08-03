@@ -10,7 +10,7 @@ class ProductsAdmin extends React.Component {
     }
 
     render() {
-        return <TableContainer />
+        return <TableContainer loaded={false} />
     }
 
 }
