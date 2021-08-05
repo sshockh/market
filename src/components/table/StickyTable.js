@@ -17,7 +17,7 @@ class StickyTable extends React.Component {
 
         return (
             <div className='sticky-table-container'>
-                <div className className='table-settings-panel'>
+                <div className='table-settings-panel'>
                     <div className="search-bar">
                         <input
                             type="text"
@@ -27,6 +27,8 @@ class StickyTable extends React.Component {
                 <StickyTableHeader
                     columns={this.props.columns}
                     columnStyles={styles}
+                    sortSettings={this.props.sortSettings}
+                    sort={this.props.sort}
                 />
                 <StickyTableRows
                     data={this.props.data}

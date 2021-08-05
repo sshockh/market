@@ -28,7 +28,8 @@ class TableContainer extends React.Component {
         super(props);
         this.state = {
             fitOnPage: false,
-            searchText: null
+            searchText: null,
+            sortSettings: null
         }
     }
 
@@ -61,12 +62,52 @@ class TableContainer extends React.Component {
         return objectArray.filter(searchInObjectProps);
     }
 
+    // изменяет объект state.sortSettings
+    sort = (columnKey) => {
+        let sortSettings = null;
+
+        if (columnKey) {
+            const { key, desc } = this.state.sortSettings || {};
+
+            if (columnKey === key) {
+                // если колонка уже отсортирована по убыванию - отменяем сортировку
+                sortSettings = desc ? null : { key, desc: true };
+            } else {
+                sortSettings = { key: columnKey }
+            }
+        }
+
+        this.setState({ sortSettings });
+    }
+
+    // сортировка массива объектов по свойству
+    sortByProp(objectArray) {
+        const obj = this.state.sortSettings;
+
+        if (!obj) return objectArray.slice();
+
+        const { key, desc } = obj;
+        return objectArray
+            .slice()
+            .sort((a, b) => {
+                return (a[key] > b[key] && !desc) ? 1 : -1;
+            });
+    }
+
     render() {
         return this.props.loaded
             ? <div >Загрузка</div>
             : <StickyTable
                 columns={this.props.columns}
-                data={this.props.data}
+                data={
+                    this.sortByProp(
+                        this.filterBySearchText(
+                            this.props.data
+                        )
+                    )
+                }
+                sortSettings={this.state.sortSettings}
+                sort={this.sort}
             />
     }
 }

@@ -17,11 +17,13 @@ function StickyTableXScroll(props) {
             onScroll={handleXScroll}>
             {
                 props.columns.map(col => {
-                    return (<div
-                        className='scroll-item'
-                        style={props.columnStyles[col.key]}
-                        key={'scroll_' + col.key}
-                    ></div>)
+                    return (
+                        <div
+                            className='scroll-item'
+                            style={props.columnStyles[col.key]}
+                            key={'scroll_' + col.key}
+                        ></div>
+                    )
                 })
             }
         </div>

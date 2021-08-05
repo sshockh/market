@@ -25,10 +25,11 @@
 }
 
 .sticky-table-header-cell {
-    overflow       : hidden;
-    border         : 1px solid blue;
-    border-right   : none;
-    font-family    : sans-serif;
+    overflow    : hidden;
+    border      : 1px solid blue;
+    border-right: none;
+    font        : 400 11pt sans-serif;
+
     display        : flex;
     justify-content: center;
     align-content  : center;
@@ -102,7 +103,7 @@
     margin   : 0;
     height   : 100%;
     width    : 100%;
-    font-size: 12pt;
+    font-size: 11pt;
     padding  : 5px;
     ;
 }
