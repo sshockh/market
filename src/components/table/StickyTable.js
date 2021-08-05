@@ -17,6 +17,13 @@ class StickyTable extends React.Component {
 
         return (
             <div className='sticky-table-container'>
+                <div className className='table-settings-panel'>
+                    <div className="search-bar">
+                        <input
+                            type="text"
+                            placeholder='Поиск'
+                        /></div>
+                </div>
                 <StickyTableHeader
                     columns={this.props.columns}
                     columnStyles={styles}
@@ -31,6 +38,7 @@ class StickyTable extends React.Component {
                     columnStyles={styles}
                 />
             </div>
+
         );
     }
 }

@@ -1,7 +1,7 @@
 import React from 'react';
-import Table from '../table/Table';
+import TableContainer from '../table/TableContainer';
 
-class UsersAdmin extends React.Component {
+class Users extends React.Component {
 
     constructor(props) {
         super(props);
@@ -21,7 +21,7 @@ class UsersAdmin extends React.Component {
                     { id: 5, username: "aushkin", email: 'aushkin@mail.ru' }
                 ]
             });
-        }, 500);
+        }, 250);
     }
 
     render() {
@@ -52,7 +52,7 @@ class UsersAdmin extends React.Component {
             <div className='users-admin'>
                 { this.state.users.length > 0
                     ?
-                    <Table
+                    <TableContainer
                         columns={columns}
                         data={this.state.users}
                     />
@@ -64,4 +64,4 @@ class UsersAdmin extends React.Component {
 
 }
 
-export default UsersAdmin;
+export default Users;

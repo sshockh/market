@@ -28,11 +28,7 @@ class TableContainer extends React.Component {
         super(props);
         this.state = {
             fitOnPage: false,
-            searchText: null,
-            sortSettings: {
-                columnKey: null,
-                desc: false
-            }
+            searchText: null
         }
     }
 
@@ -64,8 +60,6 @@ class TableContainer extends React.Component {
 
         return objectArray.filter(searchInObjectProps);
     }
-
-    sortObject
 
     render() {
         return this.props.loaded

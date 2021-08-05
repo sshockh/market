@@ -1,21 +1,21 @@
 .sticky-table-container {
-    max-height: calc(100vh - 60px);
+    max-height: calc(100vh - 55px);
     width     : 100%;
     margin    : 0 auto;
     overflow-x: hidden;
     overflow-y: auto;
 
     scroll-snap-type: y mandatory;
-    scroll-padding  : 40px;
-
-    /* 40px - высота хедера */
+    /* 72px - сумма высот панели поиска и хедера */
+    scroll-padding  : 72px;
 }
 
 .sticky-table-header {
-    height          : 40px;    
+    height          : 36px;
     position        : sticky;
     background-color: white;
-    top             : 0;
+    /* 36px - высота панели настроек */
+    top             : 36px;
     z-index         : 1000;
 
     display   : flex;
@@ -50,7 +50,10 @@
     padding    : 5px;
     /* вынести в отдельный класс для настройки
     white-space: nowrap;
+    overflow   : hidden;
 */
+    white-space: nowrap;
+    overflow   : hidden;
 }
 
 .item-sticky {
@@ -73,4 +76,33 @@
 
 .scroll-item {
     /*scroll-snap-align: start;*/
+}
+
+
+.table-settings-panel {
+    height: 36px;
+
+    position        : sticky;
+    top             : 0;
+    background-color: white;
+
+    display        : flex;
+    align-content  : center;
+    align-items    : center;
+    justify-content: center;
+    padding        : 0 5px;
+}
+
+.search-bar {
+    height: 32px;
+    flex  : 0 1 300px;
+}
+
+.search-bar input {
+    margin   : 0;
+    height   : 100%;
+    width    : 100%;
+    font-size: 12pt;
+    padding  : 5px;
+    ;
 }
