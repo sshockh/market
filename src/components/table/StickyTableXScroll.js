@@ -1,20 +1,18 @@
-function handleXScroll(evt) {
-    const divs = document.querySelectorAll('.scroll-copy');
-    const shift = evt.target.scrollLeft;
-    divs.forEach(d => {
-        d.scrollLeft = shift;
-    })
-}
 
 function StickyTableXScroll(props) {
 
     if (props.columns.length === 0)
         return null;
 
+    function handleScroll(evt) {
+        props.doScroll(evt.target.scrollLeft);        
+    }
+
+
     return (
         <div
             className='sticky-table-x-scroll'
-            onScroll={handleXScroll}>
+            onScroll={handleScroll}>
             {
                 props.columns.map(col => {
                     return (

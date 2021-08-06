@@ -36,6 +36,12 @@
     align-items    : center;
 }
 
+.sticky-table-header-cell .arrow {
+    flex: 0 0 15px;
+    text-align: center;
+}
+
+
 .sticky-table-row {
     border-bottom: 1px solid gray;
     display      : flex;

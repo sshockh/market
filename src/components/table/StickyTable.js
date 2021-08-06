@@ -5,13 +5,25 @@ import StickyTableXScroll from './StickyTableXScroll';
 import './sticky_table.css';
 
 class StickyTable extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            scroll: 0
+        }
+    }
+
+    doScroll = (scrollLeft = 0) => {
+        this.setState({
+            scroll: scrollLeft
+        })
+    }
 
     render() {
-        const styles = {}
+        const styles = {};
         this.props.columns.forEach(col => {
             styles[col.key] = {
                 minWidth: col.width,
-                maxWidth: col.width
+                maxWidth: col.width,
             }
         });
 
@@ -27,17 +39,20 @@ class StickyTable extends React.Component {
                 <StickyTableHeader
                     columns={this.props.columns}
                     columnStyles={styles}
-                    sortSettings={this.props.sortSettings}
-                    sort={this.props.sort}
+                    sortOptions={this.props.sortOptions}
+                    doSort={this.props.doSort}                    
+                    scroll={this.state.scroll}
                 />
                 <StickyTableRows
                     data={this.props.data}
                     columns={this.props.columns}
                     columnStyles={styles}
+                    scroll={this.state.scroll}
                 />
                 <StickyTableXScroll
                     columns={this.props.columns}
                     columnStyles={styles}
+                    doScroll={this.doScroll}
                 />
             </div>
 

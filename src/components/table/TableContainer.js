@@ -29,26 +29,26 @@ class TableContainer extends React.Component {
         this.state = {
             fitOnPage: false,
             searchText: null,
-            sortSettings: null
+            sortOptions: null,
+            renderData: this.props.data
         }
     }
 
     /* 
         Принимает массив объетов, 
-        возращает новый массив из объектов, содержащих в свойствах строку this.state.searchText.
+        возращает отфильтрованный массив объектов, содержащих в свойствах строку this.state.searchText.
         Список свойств для поиска формируется из колонок с признаком searchable
     */
-    filterBySearchText(objectArray) {
+    filterBySearchText(array) {
 
-        if (!this.state.searchText) return objectArray.slice(); // возвращаем копию массива
+        if (!this.state.searchText) return [...array]; // возвращаем копию массива
+
         // регулярное выражение
         const regexp = new RegExp(String(this.state.searchText), 'i');
-
         // список свойств, в которых будет произведен поиск
         const searchProps = this.props.columns
             .filter(col => col.searchable)
             .map(col => col.propName || col.key);
-
         // функция поиска до первого совпадения в объекте
         function searchInObjectProps(object) {
             for (let i = 0; i < searchProps.length; i++) {
@@ -59,39 +59,41 @@ class TableContainer extends React.Component {
             return false;
         }
 
-        return objectArray.filter(searchInObjectProps);
+        return array.filter(searchInObjectProps);
     }
 
-    // изменяет объект state.sortSettings
-    sort = (columnKey) => {
-        let sortSettings = null;
+    // обработка события сортировки
+    doSort = (columnKey) => {
+        let sortOptions = null;
 
         if (columnKey) {
-            const { key, desc } = this.state.sortSettings || {};
+            const { key, desc } = this.state.sortOptions || {};
 
             if (columnKey === key) {
                 // если колонка уже отсортирована по убыванию - отменяем сортировку
-                sortSettings = desc ? null : { key, desc: true };
+                sortOptions = desc ? null : { key, desc: true };
             } else {
-                sortSettings = { key: columnKey }
+                sortOptions = { key: columnKey }
             }
         }
-
-        this.setState({ sortSettings });
+        this.setState({
+            sortOptions
+        });
     }
 
     // сортировка массива объектов по свойству
-    sortByProp(objectArray) {
-        const obj = this.state.sortSettings;
+    sortByProp(array) {
+        const { key, desc } = this.state.sortOptions || {};
+        const newArray = [...array];
 
-        if (!obj) return objectArray.slice();
+        if (!key) return newArray;
 
-        const { key, desc } = obj;
-        return objectArray
-            .slice()
-            .sort((a, b) => {
-                return (a[key] > b[key] && !desc) ? 1 : -1;
-            });
+        return newArray.sort((a, b) => {
+            if (a[key] === b[key]) return 0;
+            return desc
+                ? a[key] < b[key] ? 1 : -1
+                : a[key] > b[key] ? 1 : -1;
+        });
     }
 
     render() {
@@ -101,13 +103,11 @@ class TableContainer extends React.Component {
                 columns={this.props.columns}
                 data={
                     this.sortByProp(
-                        this.filterBySearchText(
-                            this.props.data
-                        )
-                    )
+                        this.filterBySearchText(this.props.data))
                 }
-                sortSettings={this.state.sortSettings}
-                sort={this.sort}
+                sortOptions={this.state.sortOptions}
+                doSort={this.doSort}
+                searchText={this.state.searchText}
             />
     }
 }

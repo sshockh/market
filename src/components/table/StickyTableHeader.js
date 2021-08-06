@@ -1,26 +1,26 @@
 function StickyTableHeader(props) {
 
+    const { key, desc } = props.sortOptions || {};
+
     // html с символом сортировки
-    const sortingFlagTag = (col) => {
-        if (props.sortSettings && props.sortSettings.key === col.key) {
+    const arrowTag = () => {
 
-            const tag = props.sortSettings.desc
-                ? (<span style={{ color: 'red' }}>↡</span>)
-                : (<span style={{ color: 'blue', }}>↟</span>);
+        const [symbol, color] = desc ? ['↓', 'red'] : ['↑', 'blue'];
+        const style = { color };
 
-            return tag;
-        }
-        return ' ';
+        return <span className='arrow' style={style}>{symbol}</span>;
     }
 
 
     const handleClick = (col) => {
         if (col.sorted)
-            props.sort(col.key);
+            props.doSort(col.key);
     }
 
     return (
-        <div className='sticky-table-header scroll-copy'>
+        <div className='sticky-table-header scroll-copy'
+            style={{ scrollLeft: props.scroll }}
+        >
             {
                 props.columns.map(col => {
                     return (
@@ -31,12 +31,12 @@ function StickyTableHeader(props) {
                             onClick={() => handleClick(col)}
                         >
                             {col.title}
-                            {sortingFlagTag(col)}
+                            {key === col.key ? arrowTag() : <div className='arrow'></div>}
                         </div>
                     )
                 })
             }
-        </div>
+        </div >
     )
 }
 
