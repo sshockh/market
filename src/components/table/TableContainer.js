@@ -21,7 +21,8 @@ class TableContainer extends React.Component {
     static defaultProps = {
         loaded: false,
         columns: [],
-        data: []
+        data: [],
+        marked: null
     }
 
     constructor(props) {
@@ -39,12 +40,13 @@ class TableContainer extends React.Component {
         возращает отфильтрованный массив объектов, содержащих в свойствах строку this.state.searchText.
         Список свойств для поиска формируется из колонок с признаком searchable
     */
+    // TODO: подсветка найденных позиций
     filterBySearchText(array) {
 
         if (!this.state.searchText) return [...array]; // возвращаем копию массива
 
-        // регулярное выражение
-        const regexp = new RegExp(String(this.state.searchText), 'i');
+        const text = String(this.state.searchText).toLowerCase();
+
         // список свойств, в которых будет произведен поиск
         const searchProps = this.props.columns
             .filter(col => col.searchable)
@@ -53,13 +55,17 @@ class TableContainer extends React.Component {
         function searchInObjectProps(object) {
             for (let i = 0; i < searchProps.length; i++) {
                 const prop = searchProps[i];
-                if (object[prop] && regexp.test(String(object[prop])))
+                if (object[prop] && String(object[prop]).toLowerCase().includes(text))
                     return true;
             }
             return false;
         }
 
         return array.filter(searchInObjectProps);
+    }
+
+    doSearch = (text) => {
+        this.setState({ searchText: text })
     }
 
     // обработка события сортировки
@@ -107,6 +113,7 @@ class TableContainer extends React.Component {
                 }
                 sortOptions={this.state.sortOptions}
                 doSort={this.doSort}
+                doSearch={this.doSearch}
                 searchText={this.state.searchText}
             />
     }

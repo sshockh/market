@@ -1,0 +1,31 @@
+.context-menu-canvas {
+    width      : 100vw;
+    height     : 100vh;
+    position   : absolute;
+    top        : 0;
+    left       : 0;
+    z-index    : 9000;
+    user-select: none;
+}
+
+.context-menu-form {
+    width           : 120px;
+    min-height      : 120px;
+    background-color: white;
+    border          : 1px solid gray;
+    position        : fixed;
+    top             : 100px;
+    left            : 300px;
+}
+
+.context-menu-item {
+    height     : 30px;
+    padding    : 10px;
+    font-family: sans-serif;
+    font-size  : 10pt;
+}
+
+.context-menu-item:hover {
+    background-color: palevioletred;
+    color           : white;
+}

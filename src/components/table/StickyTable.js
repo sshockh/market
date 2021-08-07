@@ -8,8 +8,13 @@ class StickyTable extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            scroll: 0
+            scroll: 0,
+            marked: null
         }
+    }
+
+    doSearch = (evt) => {
+        this.props.doSearch(evt.target.value);
     }
 
     doScroll = (scrollLeft = 0) => {
@@ -17,6 +22,10 @@ class StickyTable extends React.Component {
             scroll: scrollLeft
         })
     }
+    doMark = (id) => {
+        this.setState({ marked: id });
+    }
+
 
     render() {
         const styles = {};
@@ -34,13 +43,14 @@ class StickyTable extends React.Component {
                         <input
                             type="text"
                             placeholder='Поиск'
+                            onChange={this.doSearch}
                         /></div>
                 </div>
                 <StickyTableHeader
                     columns={this.props.columns}
                     columnStyles={styles}
                     sortOptions={this.props.sortOptions}
-                    doSort={this.props.doSort}                    
+                    doSort={this.props.doSort}
                     scroll={this.state.scroll}
                 />
                 <StickyTableRows
@@ -48,6 +58,8 @@ class StickyTable extends React.Component {
                     columns={this.props.columns}
                     columnStyles={styles}
                     scroll={this.state.scroll}
+                    doMark={this.doMark}
+                    marked={this.state.marked}
                 />
                 <StickyTableXScroll
                     columns={this.props.columns}

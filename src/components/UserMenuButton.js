@@ -1,5 +1,5 @@
 import React from 'react';
-import ContextMenu from './ContextMenu';
+import ContextMenu from './context_menu/ContextMenu';
 
 class UserMenuButton extends React.Component {
     constructor(props) {

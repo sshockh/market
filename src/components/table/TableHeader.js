@@ -18,7 +18,6 @@ function TableHeader(props) {
 
 
     const handleClick = (col, evt) => {
-        //evt.nativeEvent.preventDefault();
         if (col.sorted)
             props.sort(col.key);
     }

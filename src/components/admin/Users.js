@@ -31,21 +31,24 @@ class Users extends React.Component {
                 title: 'id',
                 width: 50,
                 propName: 'id',
-                sorted: true
+                sorted: true,
+                searchable: true
             },
             {
                 key: "username",
                 title: 'Имя пользователя',
                 width: 200,
                 propName: 'username',
-                sorted: true
+                sorted: true,
+                searchable: true
             },
             {
                 key: "email",
                 title: 'email',
                 width: 500,
                 propName: 'email',
-                sorted: true
+                sorted: true,
+                searchable: true
             }
         ];
         return (
