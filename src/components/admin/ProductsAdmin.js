@@ -15,7 +15,7 @@ class ProductsAdmin extends React.Component {
             {
                 key: "name",
                 title: 'Наименование',
-                width: 400,
+                width: 500,
                 propName: 'name',
                 sorted: true,
                 searchable: true
@@ -23,7 +23,7 @@ class ProductsAdmin extends React.Component {
             {
                 key: "desc",
                 title: 'Описание',
-                width: 600,
+                width: 800,
                 propName: 'desc',
                 sorted: true,
                 searchable: true

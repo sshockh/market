@@ -1,5 +1,5 @@
 import classNames from "classnames";
-import React from "react";
+import React, { Fragment } from "react";
 import ContextMenu from "../context_menu/ContextMenu";
 
 class StickyTableRows extends React.Component {
@@ -28,7 +28,7 @@ class StickyTableRows extends React.Component {
 
     handleRightClick = (id, evt) => {
         evt.preventDefault();
-        
+
         // координаты клика
         const mouseCoords = [evt.clientX, evt.clientY]
         // определить набор команд меню
@@ -68,8 +68,9 @@ class StickyTableRows extends React.Component {
                                         <div
                                             className="item"
                                             style={this.props.columnStyles[col.key]}
-                                            key={row.id + '_' + col.key}>
-                                            {row[col.key]}
+                                            key={row.id + '_' + col.key}
+                                            dangerouslySetInnerHTML={{ __html: row[col.key] }}
+                                        >
                                         </div>
                                     )
                                 })}

@@ -5,8 +5,8 @@ function StickyTableHeader(props) {
     // html с символом сортировки
     const arrowTag = () => {
 
-        const [symbol, color] = desc ? ['↓', 'red'] : ['↑', 'blue'];
-        const style = { color };
+        const [symbol, color] = desc ? ['▼', 'red'] : ['▲', 'blue'];
+        const style = { color, fontSize: 18 };
 
         return <span className='arrow' style={style}>{symbol}</span>;
     }

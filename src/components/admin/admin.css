@@ -3,36 +3,51 @@
     max-height    : 100vh;
     display       : flex;
     flex-direction: column;
-
+    align-items   : stretch;
+    align-content : stretch;
 }
 
 .admin-header {
-    flex: 0 0 45px;
-
+    flex           : 0 0 40px;
     display        : flex;
     justify-content: space-between;
     align-items    : center;
     align-content  : center;
     overflow-y     : hidden;
     padding        : 0 10px;
+    width          : 1280px;
 }
 
 .admin-main {
-    flex     : 1 1;
-    display  : flex;
-    max-width: 1280px;        
+    flex   : 1 1;
+    display: flex;
+    width  : 100vw;
 }
 
 .admin-navbar {
+    margin-top: 10px;
     align-self: flex-start;
-    min-width : 150px;
-    border    : 1px solid gray;
+    flex      : 0 0 180px;
+
 }
 
 .admin-navbar li {
-    padding: 10px;
+    padding    : 10px;
+    margin     : 10px;
+    font-size  : 11pt;
+    font-family: sans-serif;
+    color      : dimgrey;
 }
 
-.users-admin {
-    
+.admin-navbar li:hover {
+    background-color: steelblue;
+    color           : white;
+}
+
+.admin-navbar a {
+    text-decoration: none;
+}
+
+.admin-content {
+    flex: 1 1;
 }

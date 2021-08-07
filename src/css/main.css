@@ -19,28 +19,30 @@ li {
 }
 
 #root {
-    padding    : 0;
-    margin     : 0 auto;
-    min-height : 100vh;
-    max-height : 100vh;
-    max-width  : 1280px;
-    user-select: none;
+    padding      : 0;
+    margin       : 0 auto;
+    min-height   : 100vh;
+    max-height   : 100vh;
+    /*max-width  : 1280px;*/
+    user-select  : none;
     /*устранение слияния margin*/
-    overflow   : hidden;
-    display: flex;
+    overflow     : hidden;
+    display      : flex;
 }
 
 .app {
     flex: 1 1;
 
-    display       : flex;
-    flex-direction: column;
+    display        : flex;
+    justify-content: center;
 }
 
 .layout {
     display       : flex;
     flex-direction: column;
+    flex          : 1 1;
     min-height    : 100vh;
+    max-width     : 1280px;
 }
 
 .header {
