@@ -9,7 +9,9 @@ class StickyTable extends React.Component {
         super(props);
         this.state = {
             scroll: 0,
-            marked: null
+            marked: null, // текущая запись
+            checked: new Set(), // список записей, отмеченных через checkbox
+            fixedColumn: null // закрепленная колонка
         }
     }
 
@@ -26,6 +28,21 @@ class StickyTable extends React.Component {
         this.setState({ marked: id });
     }
 
+    handleCheckboxClick = (id) => {
+        const set = new Set(this.state.checked)
+
+        if (set.has(id))
+            set.delete(id);
+        else set.add(id);
+
+        this.setState({ checked: set })
+    }
+
+    // закрепляет колонку таблицы
+    fixColumn = (id) => {
+        if (this.state.fixColumn !== id)
+            this.setState({ fixedColumn: id })
+    }
 
     render() {
         const styles = {};
@@ -52,6 +69,8 @@ class StickyTable extends React.Component {
                     sortOptions={this.props.sortOptions}
                     doSort={this.props.doSort}
                     scroll={this.state.scroll}
+                    fixedColumn={this.state.fixedColumn}
+                // TODO: фиксированная колонка
                 />
                 <StickyTableRows
                     data={this.props.data}
@@ -60,11 +79,15 @@ class StickyTable extends React.Component {
                     scroll={this.state.scroll}
                     doMark={this.doMark}
                     marked={this.state.marked}
+                    checked={this.state.checked}
+                    handleCheckboxClick={this.handleCheckboxClick}
+                    fixedColumn={this.state.fixedColumn}
                 />
                 <StickyTableXScroll
                     columns={this.props.columns}
                     columnStyles={styles}
                     doScroll={this.doScroll}
+                    fixedColumn={this.state.fixedColumn}
                 />
             </div>
 

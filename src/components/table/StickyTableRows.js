@@ -1,6 +1,7 @@
-import classNames from "classnames";
 import React, { Fragment } from "react";
+import classNames from "classnames";
 import ContextMenu from "../context_menu/ContextMenu";
+import TableCheckbox from './TableCheckbox';
 
 class StickyTableRows extends React.Component {
 
@@ -8,6 +9,7 @@ class StickyTableRows extends React.Component {
         super(props);
 
         this.state = {
+            // для ContextMenu
             contextMenuRunning: false,
             contextMenuItems: [],
             mouseCoordinates: []
@@ -28,7 +30,8 @@ class StickyTableRows extends React.Component {
 
     handleRightClick = (id, evt) => {
         evt.preventDefault();
-
+        // делаем строку текущей
+        this.props.doMark(id);
         // координаты клика
         const mouseCoords = [evt.clientX, evt.clientY]
         // определить набор команд меню
@@ -41,8 +44,10 @@ class StickyTableRows extends React.Component {
         });
     }
 
-    hideMenu = () => {
-        this.setState({ contextMenuRunning: false })
+    hideMenu = (evt) => {
+        this.setState({ contextMenuRunning: false });
+
+        // TODO: продолжить всплытие события
     }
 
 
@@ -63,6 +68,10 @@ class StickyTableRows extends React.Component {
                                 onClick={this.handleClick.bind(null, row.id)}
                                 onContextMenu={this.handleRightClick.bind(null, row.id)}
                             >
+                                <TableCheckbox
+                                    value={this.props.checked.has(row.id)}
+                                    handleClick={this.props.handleCheckboxClick.bind(null, row.id)}
+                                />
                                 {this.props.columns.map(col => {
                                     return (
                                         <div

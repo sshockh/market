@@ -36,11 +36,11 @@
     margin     : 10px;
     font-size  : 11pt;
     font-family: sans-serif;
-    color      : dimgrey;
+    color      : black;
 }
 
 .admin-navbar li:hover {
-    background-color: steelblue;
+    background-color: blue;
     color           : white;
 }
 

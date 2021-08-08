@@ -5,7 +5,7 @@ function StickyTableXScroll(props) {
         return null;
 
     function handleScroll(evt) {
-        props.doScroll(evt.target.scrollLeft);        
+        props.doScroll(evt.target.scrollLeft);
     }
 
 
@@ -13,6 +13,7 @@ function StickyTableXScroll(props) {
         <div
             className='sticky-table-x-scroll'
             onScroll={handleScroll}>
+            <div className='table-checkbox'></div>
             {
                 props.columns.map(col => {
                     return (

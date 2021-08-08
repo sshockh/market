@@ -14,6 +14,8 @@
     height          : 36px;
     position        : sticky;
     background-color: white;
+    border-top      : 1px solid black;
+    border-bottom   : 1px solid black;
     /* 36px - высота панели настроек */
     top             : 36px;
     z-index         : 1000;
@@ -26,8 +28,7 @@
 
 .sticky-table-header-cell {
     overflow    : hidden;
-    border      : 1px solid black;
-    border-right: none;
+    border-right: 1px solid black;
     font        : 400 11pt sans-serif;
 
     display        : flex;
@@ -51,23 +52,24 @@
 }
 
 .sticky-table-row.marked {
-    background-color: steelblue;
+    background-color: blue;
     color           : white;
 }
 
 
 .sticky-table-row .item {
-    border-left: 1px solid lightgray;
-    flex       : 1 0 150px;
-    font       : 10pt sans-serif;
-    padding    : 5px;
+    border-right: 1px solid lightgray;
+    flex        : 1 0 150px;
+    font        : 10pt sans-serif;
+    padding     : 5px;
     /* вынести в отдельный класс для настройки
-    white-space: nowrap;
-    overflow   : hidden;
+    white-space : nowrap;
+    overflow    : hidden;
 */
-    white-space: nowrap;
-    overflow   : hidden;
+    white-space : nowrap;
+    overflow    : hidden;
 }
+
 
 .sticky-table-row .item-sticky {
     position        : sticky;
@@ -104,6 +106,7 @@
     align-items    : center;
     justify-content: center;
     padding        : 0 5px;
+    z-index        : 10;
 }
 
 .search-bar {
@@ -117,5 +120,18 @@
     width    : 100%;
     font-size: 11pt;
     padding  : 5px;
-    ;
+}
+
+.table-checkbox {
+    flex            : 0 0 25px;
+    display         : flex;
+    position        : sticky;
+    left            : 0;
+    background-color: white;
+    border-left     : 1px solid lightgray;
+    border-right    : 1px solid lightgray;
+}
+
+.table-checkbox input {
+    margin: auto;
 }
