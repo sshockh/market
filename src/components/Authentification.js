@@ -42,13 +42,14 @@ class Authentification extends React.Component {
     }
 
     render() {
-        return (<>
-            {
-                this.state.redirect
-                    ? <Redirect to="/" />
-                    : <LoginForm login={this.login} />
-            }
-        </>
+        return (
+            <>
+                {
+                    this.state.redirect
+                        ? <Redirect to={this.props.prevPath || '/'} />
+                        : <LoginForm login={this.login} />
+                }
+            </>
         )
     }
 }
