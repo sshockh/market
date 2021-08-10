@@ -32,7 +32,7 @@ class ContextMenu extends React.Component {
     hide = (evt) => {
         evt.preventDefault();
         this.props.hideMenu(evt);
-        
+
     }
 
     handleSelect = (value, evt) => {
