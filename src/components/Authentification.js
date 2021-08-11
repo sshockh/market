@@ -18,7 +18,7 @@ class Authentification extends React.Component {
                 method: 'post',
                 headers: new Headers({
                     'Content-Type': 'application/json',
-                    'Origin': 'http://localhost:8090'
+                    'Origin': 'http://localhost:3000'
                 }),
                 body: JSON.stringify({
                     username,

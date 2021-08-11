@@ -3,7 +3,7 @@ import Site from './Site';
 import Authentification from './Authentification';
 import { Route, Switch } from 'react-router-dom';
 import AdminDashboard from './admin/AdminDashboard';
-import Deamon from './notification/Deamon';
+import NotificationService from './notification/NotificationService';
 import PrivateRoute from './auth/PrivateRoute';
 
 class App extends React.Component {
@@ -165,7 +165,7 @@ class App extends React.Component {
           />
 
         </Switch>
-        <Deamon />
+        <NotificationService />
       </div>
     );
   }
