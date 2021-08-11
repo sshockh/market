@@ -58,6 +58,21 @@ class NotificationService extends React.Component {
             .catch(err => { console.log(err) });
     }
 
+    markAsRead(id) {
+        fetch('http://localhost:8090/service/' + id, {
+            method: 'put',
+            headers: new Headers({
+                'Content-Type': 'application/json'
+            })
+        })
+            .then(res => {
+                if (res.ok) {
+                    //                     
+                } else { console.log(res.status, res) }
+            })
+            .catch(err => { console.log(err) });
+    }
+
     componentDidMount() {
         const timerId = setInterval(this.getData, 5000);
         this.setState({ timerId });
@@ -68,7 +83,7 @@ class NotificationService extends React.Component {
     }
 
     render() {
-        return <NotificationList />
+        return <NotificationList notifications={this.state.queue} markAsRead={this.markAsRead} />
     }
 }
 
