@@ -15,7 +15,7 @@ class ProductsContainer extends React.Component {
 
     getProducts = () => {
 
-        const url = 'http://localhost:8090/products';
+        const url = 'http://sshock.ru:49152/products';
         fetch(url, {
             method: 'get',
             headers: new Headers({

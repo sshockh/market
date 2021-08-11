@@ -16,7 +16,7 @@ class NotificationService extends React.Component {
     }
 
     getData = () => {
-        fetch('http://localhost:8090/service', {
+        fetch('http://sshock.ru:49152/service', {
             method: 'get',
             headers: new Headers({
                 'Authorization': 'Bearer ' + localStorage.getItem('token'),
@@ -59,7 +59,7 @@ class NotificationService extends React.Component {
     }
 
     markAsRead(id) {
-        fetch('http://localhost:8090/service/' + id, {
+        fetch('http://sshock.ru:49152/service' + id, {
             method: 'put',
             headers: new Headers({
                 'Content-Type': 'application/json'
